@@ -7,7 +7,9 @@ sample_num = 100
 batch = 25
 count = 0
 arr = []
+name = sys.argv[1]
 
+#use_connet_sensor
 channel = 1
 address = 0x68
 bus = smbus.SMBus(channel)
@@ -15,6 +17,7 @@ bus.write_i2c_block_data(address, 0x6B, [0x80])
 time.sleep(0.1)
 bus.write_i2c_block_data(address, 0x6B, [0x00])
 time.sleep(0.1)
+
 
 
 def main(num):
@@ -37,17 +40,22 @@ def main(num):
             
             time.sleep(0.01)
     except KeyboardInterrupt:
+        print("================================================")
+        print("=                    "+str(count + 1)  +"                  = ")        
         print("==================================================")
         time.sleep(0.3)
         count += 1
 
         arr.append([x,y,z])
         x,y,z = [],[],[]
+        f = open("test.txt","w")
+        f.write(str(arr))
+        
         if count < num:
             main(sample_num)
         
-        if sample_num % count == batch:
-            make_arr(name,count,arr)
+        if count == 50:
+            f.close()
 
         return arr
 
@@ -59,15 +67,13 @@ def convert(arr):
 arr = main(sample_num)
 data = convert(arr)
 
-
 #save dataset
 def make_dataset(num,variety):
     for i in range(num):
-        np.save("./dataset/" + variety + ".npy", data)
+        np.save('./dataset/' + variety + '.npy', data)
 
-def make_arr(name,num,arr):
-    with open("./tmp/" + name + "_" + num + ".txt", "w") as f:
-        f.write(arr)
+#def make_arr(arr):
+#    with open('data.txt', 'w') as f:
+#        f.write(arr)
 
-name = sys.argv[1]
 make_dataset(sample_num,name)
