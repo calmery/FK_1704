@@ -1,16 +1,18 @@
 import requests
 import os
+import sys
 import zipfile
 
 def download_file(url):
-    file = url.split('/')[-1]
+    filename = url.split('/')[-1]
     r = requests.get(url, stream=True)
-    with open(file, 'wb') as f:
+    with open(filename, 'wb') as f:
         for chunk in r.iter_content(chunk_size=1024):
             if chunk:
                 f.write(chunk)
                 f.flush()
-        return f
+        return filename
+
     return False
 
 def unzip(file_name):
@@ -21,3 +23,4 @@ def unzip(file_name):
 url = 'http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip'
 filename = download_file(url)
 unzip(filename)
+
