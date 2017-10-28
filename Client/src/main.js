@@ -2,6 +2,8 @@ import path from 'path'
 import express from 'express'
 import socketIo from 'socket.io'
 
+import createWindow from './electron'
+
 const app = express()
 
 path.resolve( __dirname, 'public' )
@@ -24,3 +26,15 @@ io.sockets.on( 'connection', socket => {
     socket.emit( 'message', 'Recieved ' + new Date() )
   } )
 } )
+
+createWindow( {
+  width: 800,
+  height: 600,
+
+} )
+  .then( window => {
+    window.loadURL( 'http://localhost:' + port + '/' )
+    window.setFullScreenable( false )
+    window.setResizable( false )
+    window.setMenu( null )
+  } )
