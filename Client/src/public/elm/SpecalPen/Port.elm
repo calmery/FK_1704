@@ -1,4 +1,4 @@
-port module Port exposing (setTitle, emit, on)
+port module SpecalPen.Port exposing (setTitle, emit, on)
 
 
 port setTitle : String -> Cmd a

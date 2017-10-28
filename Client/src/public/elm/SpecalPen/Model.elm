@@ -1,4 +1,4 @@
-module Model exposing (Model)
+module SpecalPen.Model exposing (Model)
 
 import List
 

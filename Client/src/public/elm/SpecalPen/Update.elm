@@ -1,7 +1,7 @@
-module Update exposing (update, Msg(..))
+module SpecalPen.Update exposing (update, Msg(..))
 
-import Model exposing (Model)
-import Port exposing (emit)
+import SpecalPen.Model exposing (Model)
+import SpecalPen.Port exposing (emit)
 
 
 type Msg
