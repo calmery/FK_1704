@@ -15,6 +15,7 @@ class CreateSpecalPensTable extends Migration
     {
         Schema::create('specal_pens', function (Blueprint $table) {
             $table->increments('id');
+            $table->int('number');
             $table->timestamps();
         });
     }
