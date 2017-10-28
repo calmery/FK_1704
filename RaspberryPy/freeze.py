@@ -10,7 +10,7 @@ def download_file(url):
             if chunk:
                 f.write(chunk)
                 f.flush()
-        return filename
+        return f
     return False
 
 def unzip(file_name):
