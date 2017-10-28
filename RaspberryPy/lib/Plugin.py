@@ -4,8 +4,8 @@ function = lambda _1, _2: ( _1, _2 )
 
 # get_cache
 # clear_cache
-# listen
-# listen_once
+# readline
+# readline_once
 
 class Plugin :
 
@@ -21,7 +21,7 @@ class Plugin :
 
         return True
 
-    def listen( self, function=None ) :
+    def readline( self, function=None ) :
         if function is not None and callable( function ) :
             self.__function = function
 
@@ -39,7 +39,7 @@ class Plugin :
 
         return True
 
-    def listen_once( self, function=None ) :
+    def readline_once( self, function=None ) :
         if function is not None and callable( function ) :
             self.__function = function
 
