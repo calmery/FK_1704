@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "client:prettify": "elm-format src/public/elm --yes"
+  },
   "devDependencies": {
     "babel-core": "^7.0.0-beta.3",
     "babel-loader": "^7.1.2",
@@ -12,6 +15,8 @@
     "babel-preset-stage-2": "^7.0.0-beta.3",
     "babel-preset-stage-3": "^7.0.0-beta.3",
     "css-loader": "^0.28.7",
+    "elm": "^0.18.0",
+    "elm-format": "^0.6.1-alpha",
     "elm-webpack-loader": "^4.3.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
@@ -23,5 +28,9 @@
     "webpack": "^3.8.1",
     "webpack-merge": "^4.1.0",
     "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
   }
 }
