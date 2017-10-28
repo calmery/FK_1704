@@ -8,7 +8,7 @@ path.resolve( __dirname, 'public' )
   |> express.static
   |> app.use
 
-const server = app.listen( () => {
+const server = app.listen( process.env.PORT || undefined, () => {
   console.log( 'Running app on localhost:' + server.address().port )
 } )
 
