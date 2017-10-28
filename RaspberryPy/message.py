@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 class Message :
 
     def __init__( self, event_name='', message='' ) :

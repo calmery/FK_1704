@@ -1,5 +1,4 @@
 import sys
-import requests
 
 function = lambda _1, _2: ( _1, _2 )
 
