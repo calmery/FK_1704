@@ -1,5 +1,8 @@
 import Elm from './elm/Main.elm'
 
+import './static/css/bulma.css'
+import './static/css/layout.scss'
+
 import io from './static/js/socket.io.js'
 
 const socket = io()
