@@ -3,7 +3,7 @@ import time
 import numpy as np
 import sys
 
-sample_num = 5
+sample_num = 100
 batch = 25
 count = 0
 arr = []
@@ -16,12 +16,11 @@ time.sleep(0.1)
 bus.write_i2c_block_data(address, 0x6B, [0x00])
 time.sleep(0.1)
 
-x,y,z = [],[],[]
 
 def main(num):
     global arr
     global count
-    global x,y,z
+    x,y,z = [],[],[]
     try:
         while True:
             data = bus.read_i2c_block_data(address, 0x3B ,6)
@@ -43,11 +42,10 @@ def main(num):
         count += 1
 
         arr.append([x,y,z])
-        
         x,y,z = [],[],[]
         if count < num:
             main(sample_num)
-
+        
         if sample_num % count == batch:
             make_arr(name,count,arr)
 
@@ -61,6 +59,7 @@ def convert(arr):
 arr = main(sample_num)
 data = convert(arr)
 
+
 #save dataset
 def make_dataset(num,variety):
     for i in range(num):
@@ -69,7 +68,6 @@ def make_dataset(num,variety):
 def make_arr(name,num,arr):
     with open("./tmp/" + name + "_" + num + ".txt", "w") as f:
         f.write(arr)
-
 
 name = sys.argv[1]
 make_dataset(sample_num,name)
