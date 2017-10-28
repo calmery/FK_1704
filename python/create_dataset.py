@@ -30,16 +30,53 @@ from PIL import Image
 import os
 import matplotlib.pyplot as plt
 
-image_dataset = []
+label_index = {
+    'zero' : 0,
+    'one' : 1,
+    'two' : 2,
+    'three' : 3,
+    'four' : 4,
+    'five' : 5,
+    'six' : 6,
+    'seven' : 7,
+    'eight' : 8,
+    'nine' : 9,
+}
+
+timesteps = 140
+
+# result = np.array([])
+result = []
 label_dataset = []
+
+arr = []
 
 for index, label in enumerate(os.listdir('dataset')):
    
     if label != '.DS_Store':
         data = np.load('dataset/' + label)
-        print(data[0][0])
-        break;
-        # print(data.shape)
-        # for d in data:
-        #     print(d.shape)
+        number = label[0:-4]
+        # print(data)
+        # break
+        for d in data:
+            print(len(d[0]))
+            print(timesteps-len(d[0]))
+            for i in d:
+                for j in range(timesteps-len(d[0])):
+                    i = np.append(i, 0.0)
+                arr.append(i)
+            print(arr)
+            # d = np.c_[d, np.zeros([3, timesteps-len(d[0])])]
+            # d = np.column_stack((d, np.zeros((3, timesteps-len(d[0])))))
+            print(d)
+            # break
+
+            # result = np.append(result,d)
+            result.append(arr)
+            label_dataset.append(label_index[number])
+            print(label)
+        # break
+
+np.save("./numbers.npy", result)
+np.save("./label.npy", np.array(label_dataset))
 
