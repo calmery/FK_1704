@@ -17,6 +17,8 @@
 具体的には,本デバイスを装着したペンで文字を書くと,PC上からその文字がフォントとして扱うことが可能となる.
 また,デバイスとPC間の通信の方法としてbluetoothとwifiを利用する.書いた文字のデータの受け渡しはbluetooth,ペンへのプラグインの追加の際はwifiを用いる.
 
+![Description](description.png)
+
 ### 特長
 
 #### 1. センサーから取得した加速度を用いて文字を認識することができる
@@ -53,6 +55,7 @@
 [Elm](http://elm-lang.org/)  
 [Babel](https://babeljs.io/)  
 [Webpack](https://webpack.js.org/)
+[Bulma](https://bulma.io/)
 
 #### デバイス
 [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)  
