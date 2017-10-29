@@ -1,5 +1,5 @@
 # すぺちゃるペン
-[![すぺちゃるペン](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=m0GywqZEMWc&index=1&list=UU0DmhoIZOGf_CJCLuO2rq2w)
+[![すぺちゃるペン](pen.png)](https://www.youtube.com/watch?v=m0GywqZEMWc&index=1&list=UU0DmhoIZOGf_CJCLuO2rq2w)
 
 ## 製品概要
 ### X Tech（X → 教育）
