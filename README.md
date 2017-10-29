@@ -1,4 +1,4 @@
-# すぺちゃるぺ~ん
+# すぺちゃるペン
 [![Product Name](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/channel/UC4PtjOfZTbVp9DwtJv82Lzg)
 
 ## 製品概要
@@ -16,13 +16,18 @@
 本製品は,ペン型のADコンバーターである.
 具体的には,本デバイスを装着したペンで文字を書くと,PC上からその文字がフォントとして扱うことが可能となる.
 また,デバイスとPC間の通信の方法としてbluetoothとwifiを利用する.書いた文字のデータの受け渡しはbluetooth,ペンへのプラグインの追加の際はwifiを用いる.
+動的にプラグインを追加するという形で機能を拡張することができる．
 
+- Bluetooth を介して PC と接続して， Raspberry Pi Zero W に必要な情報を送信して Raspberry Pi Zero W 単体でインターネットに接続できるようにする
+- PC のクライアントを介して，動的にプラグインを追加する
+- Raspberry Pi Zero W とセンサを使用して加速度を取得して入力された文字を判別する
+- プラグインの標準入力に判定された文字を送信する
+#### 構成
+![Description](description.png)
 ### 特長
 
 #### 1. センサーから取得した加速度を用いて文字を認識することができる
-
 #### 2. キャップ型デバイスだからこそ得られる汎用性の高さ
-
 #### 3. プラグインによる,昨日面における豊かな拡張性
 
 ### 解決出来ること
@@ -34,28 +39,30 @@
 
 ## 開発内容・開発技術
 
-
 ### 活用した技術
 機械学習
-
 
 #### API・データ
 特になし
 
-
 #### フレームワーク・ライブラリ・モジュール
-Laravel5.5
-Keras
-TensorFlow
+##### Raspberry Pi Zero W
+[Pykka](https://www.pykka.org/en/latest/)  
+[Keras](https://keras.io/)  
+[TensorFlow](https://www.tensorflow.org/)  
+[Requests](http://docs.python-requests.org/en/master/)  
+[Numpy](http://www.numpy.org/)
+##### Server
+[Laravel](https://laravel.com/)
+##### Client ([package.json](https://github.com/jphacks/FK_1704/blob/master/Client/package.json)/[elm-package.json](https://github.com/jphacks/FK_1704/blob/master/Client/elm-package.json))
+[Express](http://expressjs.com/)  
+[Socket.IO](https://socket.io/)  
+[Electron](https://electron.atom.io/)  
+[Elm](http://elm-lang.org/)  
+[Babel](https://babeljs.io/)  
+[Webpack](https://webpack.js.org/)
+[Bulma](https://bulma.io/)
 
 #### デバイス
-Raspberry Pi Zero W
+[Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)  
 MPU-9250 9軸センサモジュール
-
-### 研究内容・事前開発プロダクト（任意）
-特になし
-
-### 独自開発技術（Hack Dayで開発したもの）
-#### 2日間に開発した独自の機能・技術
-* 独自で開発したものの内容をこちらに記載してください
-* 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください（任意）
