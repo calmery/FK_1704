@@ -44,13 +44,24 @@
 
 
 #### フレームワーク・ライブラリ・モジュール
-Laravel5.5
-Keras
-TensorFlow
+- Laravel5.5
+- Keras
+- TensorFlow
+
+- Pykka
+- Requests
+
+- Express
+- Electron
+- Socket.IO
+- Babel
+- Elm
+- Webpack
+
 
 #### デバイス
-Raspberry Pi Zero W
-MPU-9250 9軸センサモジュール
+- Raspberry Pi Zero W
+- MPU-9250 9軸センサモジュール
 
 ### 研究内容・事前開発プロダクト（任意）
 特になし
