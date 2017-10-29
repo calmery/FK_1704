@@ -20,9 +20,7 @@
 ### 特長
 
 #### 1. センサーから取得した加速度を用いて文字を認識することができる
-
 #### 2. キャップ型デバイスだからこそ得られる汎用性の高さ
-
 #### 3. プラグインによる,昨日面における豊かな拡張性
 
 ### 解決出来ること
@@ -34,34 +32,31 @@
 
 ## 開発内容・開発技術
 
-
 ### 活用した技術
 機械学習
-
 
 #### API・データ
 特になし
 
-
 #### フレームワーク・ライブラリ・モジュール
-- Laravel5.5
-- Keras
-- TensorFlow
-
-- Pykka
-- Requests
-
-- Express
-- Electron
-- Socket.IO
-- Babel
-- Elm
-- Webpack
-
+##### Raspberry Pi Zero W
+[Pykka](https://www.pykka.org/en/latest/)  
+[Keras](https://keras.io/)  
+[TensorFlow](https://www.tensorflow.org/)  
+[Requests](http://docs.python-requests.org/en/master/)  
+##### Server
+[Laravel](https://laravel.com/)
+##### Client ([package.json](https://github.com/jphacks/FK_1704/blob/master/Client/package.json)/[elm-package.json](https://github.com/jphacks/FK_1704/blob/master/Client/elm-package.json))
+[Express](http://expressjs.com/)  
+[Socket.IO](https://socket.io/)  
+[Electron](https://electron.atom.io/)  
+[Elm](http://elm-lang.org/)  
+[Babel](https://babeljs.io/)  
+[Webpack](https://webpack.js.org/)
 
 #### デバイス
-- Raspberry Pi Zero W
-- MPU-9250 9軸センサモジュール
+[Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)  
+MPU-9250 9軸センサモジュール
 
 ### 研究内容・事前開発プロダクト（任意）
 特になし
