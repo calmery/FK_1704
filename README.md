@@ -60,7 +60,7 @@
 [Electron](https://electron.atom.io/)  
 [Elm](http://elm-lang.org/)  
 [Babel](https://babeljs.io/)  
-[Webpack](https://webpack.js.org/)
+[Webpack](https://webpack.js.org/)  
 [Bulma](https://bulma.io/)
 
 #### デバイス
