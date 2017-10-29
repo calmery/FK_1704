@@ -46,6 +46,7 @@
 [Keras](https://keras.io/)  
 [TensorFlow](https://www.tensorflow.org/)  
 [Requests](http://docs.python-requests.org/en/master/)  
+[Numpy](http://www.numpy.org/)
 ##### Server
 [Laravel](https://laravel.com/)
 ##### Client ([package.json](https://github.com/jphacks/FK_1704/blob/master/Client/package.json)/[elm-package.json](https://github.com/jphacks/FK_1704/blob/master/Client/elm-package.json))
@@ -60,11 +61,3 @@
 #### デバイス
 [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w/)  
 MPU-9250 9軸センサモジュール
-
-### 研究内容・事前開発プロダクト（任意）
-特になし
-
-### 独自開発技術（Hack Dayで開発したもの）
-#### 2日間に開発した独自の機能・技術
-* 独自で開発したものの内容をこちらに記載してください
-* 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください（任意）
