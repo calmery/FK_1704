@@ -19,15 +19,19 @@
 <body>
     <nav class="light-blue darken-1 nv">
         <div class="nav-wrapper container">
-            <a href="index.jsp" class="brand-logo">すぺちゃるぺん</a>
+            <a class="brand-logo">すぺちゃるぺん</a>
+                    <ul class="right hide-on-med-and-down nv">
+				<li><a href="/form">テストフォーム</a></li>
+			</ul>
         </div>
+
     </nav>
     <div class="parallax-container">
         <div class="parallax">
             <img src="img/back.jpg">
         </div>
     </div>
-    <a href="/numbers/delete" class="button">削除</a>
+    <a href="/numbers" class="button" style="float:left">更新</a>
     <table class="striped">
         <?php $kekka = 0;
               $count = 0;
@@ -46,13 +50,13 @@
             <td id="ans<?php echo $count; ?>"><h3><?php echo $num->answer; ?></h3>
                 <label id="label<?php echo $count; ?>"></label></td>
             <td>
-                <?php
-                    ?>
                 <input type="button" value="答え" id="btn<?php echo $count; ?>">
                 <script type="text/javascript">
+                    //答えボタンが押された時の処理
                     $("#btn<?php echo $count; ?>").click(function() {
                         
                         <?php 
+                    //演算子を判定し計算を行う
                         $hantei; 
                     if($num->operators === "+"){
                             $kekka = $num->number_l+$num->number_r;
@@ -61,6 +65,7 @@
                     }else{
                         $kekka = $num->number_l*$num->number_r;
                     }
+                    //正誤判定
                     if($kekka == $num->answer){
                         $hantei = "ok";
                     }else{
@@ -69,6 +74,7 @@
                     ?>
                     alert('正解は'+<?php echo $kekka; ?>);
                         <?php
+                        //正誤判定によって処理を行う
                         if($hantei === "ok"){ ?>
                         document.getElementById("ans<?php echo $count; ?>").style.color = "blue";
                         document.getElementById("label<?php echo $count; ?>").textContent ="正解";
@@ -85,6 +91,9 @@
         </tr>
         <?php } ?>
     </table>
+    <div style="text-align:right">
+    <a href="/numbers/delete" class="button" >削除</a>
+    </div>
 
 
 

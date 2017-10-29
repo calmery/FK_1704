@@ -11,12 +11,13 @@ use Illuminate\Http\Request;
 
 class NumberController extends Controller
 {
-    //データベースから数字を受け取って出力する
+    //データベースから計算を受け取って出力する
     public function index()
     {
         $numbers = DB::table('calculations')->get();
         return view('number', ['numbers' => $numbers]);
     }
+    //formからリクエストを受け取ってテーブルに挿入する
     public function insert(Request $request)
     {
         $num_l = intval($request->input('num-l'));
@@ -27,6 +28,7 @@ class NumberController extends Controller
         DB::table('calculations')->insert(
     ['number_l' => $num_l, 'operators' =>$ope,'number_r' => $num_r,'answer' => $answer]
 );
+        //ビューの表示にリダイレクトする
         return redirect()->action('NumberController@index');
     }
 

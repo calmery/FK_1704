@@ -18,6 +18,5 @@ Route::get('/form', function () {
     return view('form');
 });
 Route::get('/numbers', 'NumberController@index');
-Route::get('/numbers/insert', 'NumberController@insert');
-Route::post('/numbers/insert', 'NumberController@insert');
+Route::match(['get', 'post'],'numbers/insert', 'NumberController@insert');
 Route::get('/numbers/delete', 'TableDeleteController@index');
