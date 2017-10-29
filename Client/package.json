@@ -1,5 +1,7 @@
 {
   "scripts": {
+    "build": "webpack",
+    "start": "webpack && electron dist/server",
     "client:prettify": "elm-format src/public/elm --yes"
   },
   "devDependencies": {
