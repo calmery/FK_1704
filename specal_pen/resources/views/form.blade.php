@@ -27,7 +27,7 @@
             <img src="img/back.jpg">
         </div>
     </div>
-    <form action="/numbers/insert" method="get">
+    <form action="/numbers/insert" method="post">
     左辺:<input type ="text" name="num-l"><br>
     演算子:<input type ="text" name="ope"><br>
     右辺:<input type ="text" name="num-r"><br>
